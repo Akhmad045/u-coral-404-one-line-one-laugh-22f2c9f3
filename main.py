@@ -78,6 +78,7 @@ def self_test():
         ("padded ", "trailing whitespace"),
         ("a\rb", "carriage return"),
         ("a\x00b", "control character"),
+        ("a\tb", "tab character"),
     ]
     for text, label in reject:
         error = check(text)
@@ -93,6 +94,12 @@ def self_test():
     if error is not None:
         raise SystemExit("self-test FAIL: entry rejected: %s" % error)
     print("self-test ok: entry accepted (%d chars)" % len(ENTRY))
+    entry_bytes = len(ENTRY.encode("utf-8"))
+    if not 60 <= entry_bytes <= 195:
+        raise SystemExit("self-test FAIL: entry is %d bytes, outside the "
+                         "60-195 byte band" % entry_bytes)
+    print("self-test ok: entry is %d bytes, inside the 60-195 byte band"
+          % entry_bytes)
     with tempfile.TemporaryDirectory() as tmp:
         path = os.path.join(tmp, "entry.txt")
         text, digest = write_entry(path)

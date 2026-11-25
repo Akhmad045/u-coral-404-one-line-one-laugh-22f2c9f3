@@ -10,7 +10,7 @@ Entry for the [One Line, One Laugh](https://make.fun/bounty/u-coral-404-one-line
 
 > I asked the barber for 'something low-maintenance'; he gave me a mirror and thirty seconds of silence.
 
-The turn is the silence: the customer asks for low-maintenance hair, and the barber's answer — a mirror, then nothing — says the hair speaks for itself. One concrete image, no setup longer than the punchline needs, 102 characters.
+The turn is the silence: the customer asks for low-maintenance hair, and the barber's answer — a mirror, then nothing — says the hair speaks for itself. One concrete image, no setup longer than the punchline needs, 102 characters / 102 bytes, inside the 60–195 byte band of past winning one-liners.
 
 Run it with `python3 main.py`, or `python3 main.py --self-test` to validate the gate (1–200 characters, single line, not only whitespace) including the rejection cases.
 
